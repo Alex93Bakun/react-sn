@@ -9,8 +9,8 @@ import MyPosts from "./MyPosts/MyPosts";
 const Profile = () => {
     return (
         <div>
-            <div>
-                <img src={nature} alt="nature-wallpaper"/>
+            <div className={s.wallpaperContainer}>
+                <img className={s.wallpaper} src={nature} alt="nature-wallpaper"/>
             </div>
             <div>
                 <img src={avatar} alt="avatar"/>
