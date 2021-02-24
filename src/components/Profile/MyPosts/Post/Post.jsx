@@ -3,12 +3,12 @@ import React from 'react';
 import s from "./Post.module.scss";
 import postAvatar from '../../../../assets/postAvatar.png';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div>
             <div className={s.item}>
                 <img src={postAvatar} alt="Avatar"/>
-                Post 1
+                {props.message}
                 <div>
                     <span>like</span>
                 </div>
