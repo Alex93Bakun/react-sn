@@ -1,10 +1,13 @@
 import React from 'react';
+
 import nature from "../nature-wallpapper.jpg";
 import avatar from "../avatar.jpg";
 
+import s from './Profile.module.scss'
+
 const Profile = () => {
     return (
-        <div className="content">
+        <div className={s.content}>
             <div>
                 <img src={nature} alt="nature-wallpaper"/>
             </div>
@@ -17,9 +20,9 @@ const Profile = () => {
                 <div>
                     New post
                 </div>
-                <div>
-                    <div>Post 1</div>
-                    <div>Post 2</div>
+                <div className={s.posts}>
+                    <div className={s.item}>Post 1</div>
+                    <div className={s.item}>Post 2</div>
                 </div>
             </div>
         </div>
