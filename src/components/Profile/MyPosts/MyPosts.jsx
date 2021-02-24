@@ -6,9 +6,16 @@ import s from './MyPosts.module.scss'
 
 const MyPosts = () => {
     return (
-        <div>
-            <textarea/>
-            <button>Add post</button>
+        <div className={s.postsBlock}>
+            <h3>My posts</h3>
+            <div>
+                <div>
+                    <textarea/>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
+            </div>
             <div>
                 New post
             </div>
