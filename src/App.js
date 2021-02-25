@@ -11,7 +11,7 @@ import Settings from "./components/Settings/Options";
 
 import './App.scss';
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
