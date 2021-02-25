@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 
 import s from './MyPosts.module.scss'
 
-const MyPosts = () => {
+const MyPosts = props => {
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
@@ -20,7 +20,7 @@ const MyPosts = () => {
                 New post
             </div>
             <div className={s.posts}>
-                {postsData.map(post => <Post message={post.message} likesCount={post.likesCount}/>)}
+                {props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount}/>)}
             </div>
         </div>
     );
