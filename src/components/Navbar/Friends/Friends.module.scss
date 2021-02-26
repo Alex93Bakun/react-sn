@@ -1,0 +1,14 @@
+.friends {
+  margin-top: 5rem;
+
+  .friendContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h2 {
+    font-weight: 300;
+    color: #fff;
+    margin: 0 0 .7rem;
+  }
+}

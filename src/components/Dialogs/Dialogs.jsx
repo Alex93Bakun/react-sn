@@ -2,6 +2,7 @@ import React from 'react';
 
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import AddMessageForm from "./AddMessageForm/AddMessageForm";
 
 import s from './Dialogs.module.scss';
 
@@ -14,6 +15,7 @@ const Dialogs = props => {
             <div className={s.messages}>
                 {props.state.messagesData.map(message => <Message message={message.message}/>)}
             </div>
+            <AddMessageForm/>
         </div>
     );
 };

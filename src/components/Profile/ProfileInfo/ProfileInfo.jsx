@@ -12,7 +12,7 @@ const ProfileInfo = () => {
                 <img className={s.wallpaper} src={nature} alt="nature-wallpaper"/>
             </div>
             <div className={s.descriptionBlock}>
-                <img src={avatar} alt="avatar"/>
+                <img src={avatar} alt="avatar" width="200" height="356"/>
                 <p>description</p>
             </div>
         </div>
