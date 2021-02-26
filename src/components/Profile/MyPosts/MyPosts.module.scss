@@ -1,6 +1,10 @@
 .postsBlock {
   padding: 10px;
 
+  textarea {
+    outline: none;
+  }
+
   .posts {
     margin-top: 10px;
   }
