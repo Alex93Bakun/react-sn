@@ -10,12 +10,16 @@ const Dialogs = props => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)}
+                {props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)}
             </div>
             <div className={s.messages}>
-                {props.state.messagesData.map(message => <Message message={message.message}/>)}
+                {props.dialogsPage.messagesData.map(message => <Message message={message.message}/>)}
             </div>
-            <AddMessageForm/>
+            <AddMessageForm
+                messagesData={props.dialogsPage.messagesData}
+                newMessageText={props.dialogsPage.newMessageText}
+                dispatch={props.dispatch}
+            />
         </div>
     );
 };
