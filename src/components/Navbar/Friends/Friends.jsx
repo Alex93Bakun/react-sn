@@ -8,7 +8,7 @@ const Friends = props => {
         <div className={s.friends}>
             <h2>Friends</h2>
             <div className={s.friendContainer}>
-                {props.friendsData.map(friend => <Friend name={friend.name}/>)}
+                {/*{props.friendsData.map(friend => <Friend name={friend.name}/>)}*/}
             </div>
         </div>
     );
