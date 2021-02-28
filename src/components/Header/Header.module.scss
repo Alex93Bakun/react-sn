@@ -1,6 +1,10 @@
 .header {
   grid-area: h;
   background-color: #61b9ff;
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  padding-left: 20px;
 
   img {
     width: 48px;
