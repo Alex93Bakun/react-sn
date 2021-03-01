@@ -1,6 +1,6 @@
 import React from 'react';
 
-import avatar from '../../../../assets/postAvatar.png';
+import avatar from '../../../../assets/images/postAvatar.png';
 
 import s from './Friend.module.scss';
 

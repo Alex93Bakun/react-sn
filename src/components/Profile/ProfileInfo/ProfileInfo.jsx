@@ -1,7 +1,7 @@
 import React from 'react';
 
-import nature from "../../../assets/nature-wallpapper.jpg";
-import avatar from "../../../assets/avatar.jpg";
+import nature from "../../../assets/images/nature-wallpapper.jpg";
+import avatar from "../../../assets/images/avatar.jpg";
 
 import s from "./ProfileInfo.module.scss";
 
