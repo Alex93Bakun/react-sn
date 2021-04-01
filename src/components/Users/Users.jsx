@@ -5,11 +5,12 @@ import userPhoto from "../../assets/images/user.png";
 
 const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-  let pages = [];
 
+  let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+  let z = 1;
 
   return (
     <div>
@@ -17,12 +18,13 @@ const Users = (props) => {
         {pages.map((p) => {
           return (
             <span
-              className={props.currentPage === p && s.selectedPage}
+              key={z++}
+              className={props.currentPage === p ? s.selectedPage : ""}
               onClick={(e) => {
                 props.onPageChanged(p);
               }}
             >
-              {p}
+              {z < 15 ? p : " "}
             </span>
           );
         })}
@@ -43,7 +45,7 @@ const Users = (props) => {
                     props.unfollow(u.id);
                   }}
                 >
-                  UNFOLLOW
+                  Unfollow
                 </button>
               ) : (
                 <button
@@ -51,7 +53,7 @@ const Users = (props) => {
                     props.follow(u.id);
                   }}
                 >
-                  FOLLOW
+                  Follow
                 </button>
               )}
             </div>
