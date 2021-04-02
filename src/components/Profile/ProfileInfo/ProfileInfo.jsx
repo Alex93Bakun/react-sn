@@ -3,7 +3,7 @@ import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 
 import nature from "../../../assets/images/nature-wallpapper.jpg";
-import avatar from "../../../assets/images/avatar.jpg";
+import user from "../../../assets/images/user.png";
 
 import s from "./ProfileInfo.module.scss";
 
@@ -19,12 +19,11 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.descriptionBlock}>
         <h3>{props.profile.fullName}</h3>
-        <img
-          src={props.profile.photos.large}
-          alt="avatar"
-          width="200"
-          height="356"
-        />
+        {props.profile.photos.large ? (
+          <img src={props.profile.photos.large} alt="avatar" />
+        ) : (
+          <img src={user} alt="avatar" />
+        )}
         <div>
           <h3>Обо мне</h3>
           <p>{props.profile.aboutMe}</p>
