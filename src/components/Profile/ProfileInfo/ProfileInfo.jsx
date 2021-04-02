@@ -1,22 +1,56 @@
-import React from 'react';
+import React from "react";
+
+import Preloader from "../../common/Preloader/Preloader";
 
 import nature from "../../../assets/images/nature-wallpapper.jpg";
 import avatar from "../../../assets/images/avatar.jpg";
 
 import s from "./ProfileInfo.module.scss";
 
-const ProfileInfo = () => {
-    return (
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />;
+  }
+  let contacts = Object.entries(props.profile.contacts);
+  return (
+    <div>
+      <div className={s.wallpaperContainer}>
+        <img className={s.wallpaper} src={nature} alt="nature-wallpaper" />
+      </div>
+      <div className={s.descriptionBlock}>
+        <h3>{props.profile.fullName}</h3>
+        <img
+          src={props.profile.photos.large}
+          alt="avatar"
+          width="200"
+          height="356"
+        />
         <div>
-            <div className={s.wallpaperContainer}>
-                <img className={s.wallpaper} src={nature} alt="nature-wallpaper"/>
-            </div>
-            <div className={s.descriptionBlock}>
-                <img src={avatar} alt="avatar" width="200" height="356"/>
-                <p>description</p>
-            </div>
+          <h3>Обо мне</h3>
+          <p>{props.profile.aboutMe}</p>
         </div>
-    );
+        <div>
+          <h3>Контакты</h3>
+          {contacts.map((c) => {
+            return (
+              c[1] && (
+                <p>
+                  <b>{c[0]}:</b>
+                  <a href={c[1]}>{c[1]}</a>
+                </p>
+              )
+            );
+          })}
+        </div>
+        <div>
+          <h3>Ищу работу</h3>
+          {props.profile.lookingForAJob ? <p>Да</p> : <p>Нет</p>}
+          <h4>Описание работы:</h4>
+          <p>{props.profile.lookingForAJobDescription}</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProfileInfo;
