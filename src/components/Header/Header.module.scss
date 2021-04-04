@@ -2,11 +2,18 @@
   grid-area: h;
   background-color: #61b9ff;
   display: grid;
+  grid-template-columns: 11fr 1fr;
   justify-items: start;
   align-items: center;
   padding-left: 20px;
 
   img {
     width: 48px;
+  }
+
+  .loginBlock {
+    a {
+      color: #fff;
+    }
   }
 }
