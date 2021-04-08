@@ -22,7 +22,7 @@ const Users = (props) => {
             <span
               key={z++}
               className={props.currentPage === p ? s.selectedPage : ""}
-              onClick={(e) => {
+              onClick={() => {
                 props.onPageChanged(p);
               }}
             >
@@ -39,6 +39,7 @@ const Users = (props) => {
                 <img
                   src={u.photos.small != null ? u.photos.small : userPhoto}
                   className={s.userPhoto}
+                  alt={"Avatar"}
                 />
               </NavLink>
             </div>
@@ -47,13 +48,7 @@ const Users = (props) => {
                 <button
                   disabled={props.followingInProgress.some((id) => id === u.id)}
                   onClick={() => {
-                    props.setToggleIsFollowingProgress(true, u.id);
-                    usersAPI.unfollow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.unfollow(u.id);
-                      }
-                      props.setToggleIsFollowingProgress(false, u.id);
-                    });
+                    props.unfollow(u.id);
                   }}
                 >
                   Unfollow
@@ -62,13 +57,7 @@ const Users = (props) => {
                 <button
                   disabled={props.followingInProgress.some((id) => id === u.id)}
                   onClick={() => {
-                    props.setToggleIsFollowingProgress(true, u.id);
-                    usersAPI.follow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.follow(u.id);
-                      }
-                      props.setToggleIsFollowingProgress(false, u.id);
-                    });
+                    props.follow(u.id);
                   }}
                 >
                   Follow
