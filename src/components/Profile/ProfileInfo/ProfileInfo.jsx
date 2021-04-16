@@ -1,5 +1,6 @@
 import React from "react";
 
+import ProfileStatus from "./ProfileStatus"
 import Preloader from "../../common/Preloader/Preloader";
 
 import nature from "../../../assets/images/nature-wallpapper.jpg";
@@ -14,12 +15,16 @@ const ProfileInfo = (props) => {
   let contacts = Object.entries(props.profile.contacts);
   return (
     <div>
-      <div className={s.wallpaperContainer}>
+{/*      <div className={s.wallpaperContainer}>
         <img className={s.wallpaper} src={nature} alt="nature-wallpaper" />
-      </div>
+      </div>*/}
       <div className={s.descriptionBlock}>
         <h3>{props.profile.fullName}</h3>
-        <img src={props.profile.photos.large || userPhoto} className={s.mainPhoto}/>
+        <img
+          src={props.profile.photos.large || userPhoto}
+          className={s.mainPhoto}
+         alt={"Ava"}/>
+        <ProfileStatus status={"Hello my friends"} />
         <div>
           <h3>Обо мне</h3>
           <p>{props.profile.aboutMe}</p>
