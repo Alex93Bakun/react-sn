@@ -1,5 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { Input } from "../common/FormsControls/FormsControls";
+import { required } from "../../utils/validators/validators";
 
 const LoginForm = (props) => {
   return (
@@ -9,7 +11,8 @@ const LoginForm = (props) => {
           type="text"
           name={"login"}
           placeholder={"login"}
-          component={"input"}
+          component={Input}
+          validate={[required]}
         />
       </div>
       <div>
@@ -17,12 +20,13 @@ const LoginForm = (props) => {
           type="text"
           name={"password"}
           placeholder={"password"}
-          component={"input"}
+          component={Input}
+          validate={[required]}
         />
       </div>
       <div>
-        <Field type="checkbox" name={"rememberMe"} component={"input"} />
-        remember me
+        <Field type="checkbox" name={"rememberMe"} component={Input} /> remember
+        me
       </div>
       <div>
         <button>Log In</button>
