@@ -26,7 +26,7 @@ const Users = (props) => {
                 props.onPageChanged(p);
               }}
             >
-              {z < 15 ? `${p} ` : " "}
+              {z < 20 ? `${p} ` : " "}
             </span>
           );
         })}
