@@ -4,6 +4,12 @@ const ProfileStatus = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [status, setStatus] = useState(props.status);
 
+  useEffect(() => {
+    return () => {
+      setStatus(props.status);
+    };
+  }, [props.status]);
+
   const activateEditMode = () => {
     setEditMode(true);
   };
