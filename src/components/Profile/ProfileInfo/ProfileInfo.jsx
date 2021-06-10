@@ -3,35 +3,28 @@ import React from "react";
 import ProfileStatus from "./ProfileStatus";
 import Preloader from "../../common/Preloader/Preloader";
 
-import nature from "../../../assets/images/nature-wallpapper.jpg";
 import userPhoto from "../../../assets/images/user.png";
 
 import s from "./ProfileInfo.module.scss";
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({ profile, status, updateStatus }) => {
+  if (!profile) {
     return <Preloader />;
   }
-  let contacts = Object.entries(props.profile.contacts);
+  let contacts = Object.entries(profile.contacts);
   return (
     <div>
-      {/*      <div className={s.wallpaperContainer}>
-        <img className={s.wallpaper} src={nature} alt="nature-wallpaper" />
-      </div>*/}
       <div className={s.descriptionBlock}>
-        <h3>{props.profile.fullName}</h3>
+        <h3>{profile.fullName}</h3>
         <img
-          src={props.profile.photos.large || userPhoto}
+          src={profile.photos.large || userPhoto}
           className={s.mainPhoto}
           alt={"Ava"}
         />
-        <ProfileStatus
-          status={props.status}
-          updateStatus={props.updateStatus}
-        />
+        <ProfileStatus status={status} updateStatus={updateStatus} />
         <div>
           <h3>Обо мне</h3>
-          <p>{props.profile.aboutMe}</p>
+          <p>{profile.aboutMe}</p>
         </div>
         <div>
           <h3>Контакты</h3>
@@ -48,9 +41,9 @@ const ProfileInfo = (props) => {
         </div>
         <div>
           <h3>Ищу работу</h3>
-          {props.profile.lookingForAJob ? <p>Да</p> : <p>Нет</p>}
+          {profile.lookingForAJob ? <p>Да</p> : <p>Нет</p>}
           <h4>Описание работы:</h4>
-          <p>{props.profile.lookingForAJobDescription}</p>
+          <p>{profile.lookingForAJobDescription}</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { compose } from "redux";
 
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
@@ -10,12 +12,11 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Options";
 import UsersContainer from "./components/Users/UsersContainer";
 import LoginPage from "./components/Login/Login";
+import Preloader from "./components/common/Preloader/Preloader";
+
+import { initializeApp } from "./redux/appReducer";
 
 import "./App.scss";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { initializeApp } from "./redux/appReducer";
-import Preloader from "./components/common/Preloader/Preloader";
 
 class App extends React.Component {
   componentDidMount() {
